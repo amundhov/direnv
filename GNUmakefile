@@ -166,6 +166,8 @@ install: all
 	install $(exe) $(DESTDIR)$(BINDIR)
 	install -d $(DESTDIR)$(MANDIR)/man1
 	cp -R man/*.1 $(DESTDIR)$(MANDIR)/man1
+	install -d $(DESTDIR)$(SHAREDIR)/bash
+	cp -R contrib/bash/*.sh $(DESTDIR)$(SHAREDIR)/bash
 	install -d $(DESTDIR)$(SHAREDIR)/fish/vendor_conf.d
 	echo "$(BINDIR)/direnv hook fish | source" > $(DESTDIR)$(SHAREDIR)/fish/vendor_conf.d/direnv.fish
 
